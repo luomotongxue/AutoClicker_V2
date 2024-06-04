@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             TabControl = new MaterialSkin.Controls.MaterialTabControl();
             AutoClickPage = new TabPage();
             autoclickTitleLabel = new MaterialSkin.Controls.MaterialLabel();
@@ -460,12 +461,12 @@
             materialCard6.Controls.Add(macroActionTypeComboBox);
             materialCard6.Depth = 0;
             materialCard6.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard6.Location = new Point(606, 155);
+            materialCard6.Location = new Point(606, 169);
             materialCard6.Margin = new Padding(14);
             materialCard6.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard6.Name = "materialCard6";
             materialCard6.Padding = new Padding(14);
-            materialCard6.Size = new Size(317, 321);
+            materialCard6.Size = new Size(317, 307);
             materialCard6.TabIndex = 6;
             // 
             // macroAddButton
@@ -646,12 +647,12 @@
             materialCard5.Controls.Add(macroActionListBox);
             materialCard5.Depth = 0;
             materialCard5.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard5.Location = new Point(6, 155);
+            materialCard5.Location = new Point(6, 169);
             materialCard5.Margin = new Padding(14);
             materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard5.Name = "materialCard5";
             materialCard5.Padding = new Padding(14);
-            materialCard5.Size = new Size(591, 321);
+            materialCard5.Size = new Size(591, 307);
             materialCard5.TabIndex = 3;
             // 
             // macroActionListBox
@@ -968,6 +969,7 @@
             ClientSize = new Size(951, 720);
             Controls.Add(TabControl);
             DrawerTabControl = TabControl;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimumSize = new Size(951, 720);
             Name = "Form1";
