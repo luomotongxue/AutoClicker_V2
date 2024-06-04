@@ -11,12 +11,14 @@
         public static string macro = "";
         public static string mouseSideButton_1 = "";
         public static string mouseSideButton_2 = "";
+        public static string changeClickTypeHotkeyComboBoxHint = "";
 
         public static void zh_cn()
         {
             // AutoClick Page
             autoClickPage = "连点";
             clickKind = "点击类型";
+            changeClickTypeHotkeyComboBoxHint = "切换点击类型热键";
 
             // Macro Page
             macro = "宏";
@@ -34,13 +36,21 @@
 
         public static void en_us()
         {
+            // AutoClick Page
             autoClickPage = "AutoClick";
             clickKind = "Click Kind";
+            changeClickTypeHotkeyComboBoxHint = "Change click type hot key";
+
+            // Macro Page
+            macro = "Macro";
+
+            // Settings Page
+            settingsPage = "Settings";
             delayTextBoxHint = "Input CPS/Click Delay(ms)";
             hotkeyComboBoxHint = "Hot key";
-            settingsPage = "Settings";
-            changeHotkey = "Choose a hot key";
-            macro = "Macro";
+            
+            // Global
+            changeHotkey = "Choose a hot key";      
             mouseSideButton_1 = "Mouse side button 1";
             mouseSideButton_2 = "Mouse side button 2";
         }

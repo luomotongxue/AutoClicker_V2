@@ -33,6 +33,8 @@
             autoclickTitleLabel = new MaterialSkin.Controls.MaterialLabel();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
             materialCard3 = new MaterialSkin.Controls.MaterialCard();
+            chooseClickTypeHotkeyButton = new MaterialSkin.Controls.MaterialButton();
+            changeClickTypeHotkeyComboBox = new MaterialSkin.Controls.MaterialComboBox();
             chooseHotkeyButton = new MaterialSkin.Controls.MaterialButton();
             hotkeyComboBox = new MaterialSkin.Controls.MaterialComboBox();
             unitComboBox = new MaterialSkin.Controls.MaterialComboBox();
@@ -63,6 +65,16 @@
             ssfTipLabel2 = new MaterialSkin.Controls.MaterialLabel();
             macroTitleLabel = new MaterialSkin.Controls.MaterialLabel();
             settingsPage = new TabPage();
+            materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            materialCard8 = new MaterialSkin.Controls.MaterialCard();
+            materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             langComboBox = new MaterialSkin.Controls.MaterialComboBox();
             tipsLabel1 = new MaterialSkin.Controls.MaterialLabel();
             settingsTitleLabel = new MaterialSkin.Controls.MaterialLabel();
@@ -77,6 +89,7 @@
             materialCard5.SuspendLayout();
             materialCard4.SuspendLayout();
             settingsPage.SuspendLayout();
+            materialCard8.SuspendLayout();
             SuspendLayout();
             // 
             // TabControl
@@ -91,7 +104,7 @@
             TabControl.Multiline = true;
             TabControl.Name = "TabControl";
             TabControl.SelectedIndex = 0;
-            TabControl.Size = new Size(819, 653);
+            TabControl.Size = new Size(945, 653);
             TabControl.TabIndex = 0;
             // 
             // AutoClickPage
@@ -102,7 +115,7 @@
             AutoClickPage.Location = new Point(4, 33);
             AutoClickPage.Name = "AutoClickPage";
             AutoClickPage.Padding = new Padding(3);
-            AutoClickPage.Size = new Size(811, 616);
+            AutoClickPage.Size = new Size(937, 616);
             AutoClickPage.TabIndex = 0;
             AutoClickPage.Text = "AutoClick";
             // 
@@ -110,12 +123,12 @@
             // 
             autoclickTitleLabel.AutoSize = true;
             autoclickTitleLabel.Depth = 0;
-            autoclickTitleLabel.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
+            autoclickTitleLabel.Font = new Font("思源黑体 CN Regular", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             autoclickTitleLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
             autoclickTitleLabel.Location = new Point(10, 14);
             autoclickTitleLabel.MouseState = MaterialSkin.MouseState.HOVER;
             autoclickTitleLabel.Name = "autoclickTitleLabel";
-            autoclickTitleLabel.Size = new Size(105, 29);
+            autoclickTitleLabel.Size = new Size(109, 33);
             autoclickTitleLabel.TabIndex = 1;
             autoclickTitleLabel.Text = "AutoClick";
             // 
@@ -132,12 +145,14 @@
             materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard1.Name = "materialCard1";
             materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(791, 542);
+            materialCard1.Size = new Size(910, 542);
             materialCard1.TabIndex = 0;
             // 
             // materialCard3
             // 
             materialCard3.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard3.Controls.Add(chooseClickTypeHotkeyButton);
+            materialCard3.Controls.Add(changeClickTypeHotkeyComboBox);
             materialCard3.Controls.Add(chooseHotkeyButton);
             materialCard3.Controls.Add(hotkeyComboBox);
             materialCard3.Controls.Add(unitComboBox);
@@ -149,23 +164,67 @@
             materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard3.Name = "materialCard3";
             materialCard3.Padding = new Padding(14);
-            materialCard3.Size = new Size(777, 424);
+            materialCard3.Size = new Size(888, 424);
             materialCard3.TabIndex = 3;
+            // 
+            // chooseClickTypeHotkeyButton
+            // 
+            chooseClickTypeHotkeyButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            chooseClickTypeHotkeyButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            chooseClickTypeHotkeyButton.Depth = 0;
+            chooseClickTypeHotkeyButton.HighEmphasis = true;
+            chooseClickTypeHotkeyButton.Icon = null;
+            chooseClickTypeHotkeyButton.Location = new Point(729, 358);
+            chooseClickTypeHotkeyButton.Margin = new Padding(4, 6, 4, 6);
+            chooseClickTypeHotkeyButton.MouseState = MaterialSkin.MouseState.HOVER;
+            chooseClickTypeHotkeyButton.Name = "chooseClickTypeHotkeyButton";
+            chooseClickTypeHotkeyButton.NoAccentTextColor = Color.Empty;
+            chooseClickTypeHotkeyButton.Size = new Size(159, 36);
+            chooseClickTypeHotkeyButton.TabIndex = 5;
+            chooseClickTypeHotkeyButton.Text = "Choose a hot key";
+            chooseClickTypeHotkeyButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            chooseClickTypeHotkeyButton.UseAccentColor = false;
+            chooseClickTypeHotkeyButton.UseVisualStyleBackColor = true;
+            chooseClickTypeHotkeyButton.Click += chooseChangeClickTypeHotkeyButton_Click;
+            // 
+            // changeClickTypeHotkeyComboBox
+            // 
+            changeClickTypeHotkeyComboBox.AutoResize = false;
+            changeClickTypeHotkeyComboBox.BackColor = Color.FromArgb(255, 255, 255);
+            changeClickTypeHotkeyComboBox.Depth = 0;
+            changeClickTypeHotkeyComboBox.DrawMode = DrawMode.OwnerDrawVariable;
+            changeClickTypeHotkeyComboBox.DropDownHeight = 174;
+            changeClickTypeHotkeyComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            changeClickTypeHotkeyComboBox.DropDownWidth = 121;
+            changeClickTypeHotkeyComboBox.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            changeClickTypeHotkeyComboBox.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            changeClickTypeHotkeyComboBox.FormattingEnabled = true;
+            changeClickTypeHotkeyComboBox.Hint = "Change click type hot key";
+            changeClickTypeHotkeyComboBox.IntegralHeight = false;
+            changeClickTypeHotkeyComboBox.ItemHeight = 43;
+            changeClickTypeHotkeyComboBox.Items.AddRange(new object[] { "F2", "Mouse side button 1", "Mouse side button 2" });
+            changeClickTypeHotkeyComboBox.Location = new Point(19, 358);
+            changeClickTypeHotkeyComboBox.MaxDropDownItems = 4;
+            changeClickTypeHotkeyComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            changeClickTypeHotkeyComboBox.Name = "changeClickTypeHotkeyComboBox";
+            changeClickTypeHotkeyComboBox.Size = new Size(703, 49);
+            changeClickTypeHotkeyComboBox.StartIndex = 0;
+            changeClickTypeHotkeyComboBox.TabIndex = 4;
+            changeClickTypeHotkeyComboBox.SelectedIndexChanged += changeClickTypeHotkeyComboBox_SelectedIndexChanged;
             // 
             // chooseHotkeyButton
             // 
             chooseHotkeyButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             chooseHotkeyButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             chooseHotkeyButton.Depth = 0;
-            chooseHotkeyButton.Dock = DockStyle.Bottom;
             chooseHotkeyButton.HighEmphasis = true;
             chooseHotkeyButton.Icon = null;
-            chooseHotkeyButton.Location = new Point(14, 374);
+            chooseHotkeyButton.Location = new Point(729, 308);
             chooseHotkeyButton.Margin = new Padding(4, 6, 4, 6);
             chooseHotkeyButton.MouseState = MaterialSkin.MouseState.HOVER;
             chooseHotkeyButton.Name = "chooseHotkeyButton";
             chooseHotkeyButton.NoAccentTextColor = Color.Empty;
-            chooseHotkeyButton.Size = new Size(749, 36);
+            chooseHotkeyButton.Size = new Size(159, 36);
             chooseHotkeyButton.TabIndex = 3;
             chooseHotkeyButton.Text = "Choose a hot key";
             chooseHotkeyButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -185,15 +244,15 @@
             hotkeyComboBox.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             hotkeyComboBox.ForeColor = Color.FromArgb(222, 0, 0, 0);
             hotkeyComboBox.FormattingEnabled = true;
-            hotkeyComboBox.Hint = "Hot key";
+            hotkeyComboBox.Hint = "Click hot key";
             hotkeyComboBox.IntegralHeight = false;
             hotkeyComboBox.ItemHeight = 43;
-            hotkeyComboBox.Items.AddRange(new object[] { "F8", "Mouse side buttons 1", "Mouse side buttons 2" });
-            hotkeyComboBox.Location = new Point(14, 316);
+            hotkeyComboBox.Items.AddRange(new object[] { "F8", "Mouse side button 1", "Mouse side button 2" });
+            hotkeyComboBox.Location = new Point(19, 295);
             hotkeyComboBox.MaxDropDownItems = 4;
             hotkeyComboBox.MouseState = MaterialSkin.MouseState.OUT;
             hotkeyComboBox.Name = "hotkeyComboBox";
-            hotkeyComboBox.Size = new Size(750, 49);
+            hotkeyComboBox.Size = new Size(703, 49);
             hotkeyComboBox.StartIndex = 0;
             hotkeyComboBox.TabIndex = 2;
             hotkeyComboBox.SelectedIndexChanged += hotkeyComboBox_SelectedIndexChanged;
@@ -213,7 +272,7 @@
             unitComboBox.IntegralHeight = false;
             unitComboBox.ItemHeight = 43;
             unitComboBox.Items.AddRange(new object[] { "CPS", "Delay(ms)" });
-            unitComboBox.Location = new Point(644, 17);
+            unitComboBox.Location = new Point(748, 16);
             unitComboBox.MaxDropDownItems = 4;
             unitComboBox.MouseState = MaterialSkin.MouseState.OUT;
             unitComboBox.Name = "unitComboBox";
@@ -224,6 +283,8 @@
             // delayTextBox
             // 
             delayTextBox.AnimateReadOnly = false;
+            delayTextBox.AutoCompleteMode = AutoCompleteMode.None;
+            delayTextBox.AutoCompleteSource = AutoCompleteSource.None;
             delayTextBox.BackgroundImageLayout = ImageLayout.None;
             delayTextBox.CharacterCasing = CharacterCasing.Normal;
             delayTextBox.Depth = 0;
@@ -243,7 +304,7 @@
             delayTextBox.SelectionLength = 0;
             delayTextBox.SelectionStart = 0;
             delayTextBox.ShortcutsEnabled = true;
-            delayTextBox.Size = new Size(621, 48);
+            delayTextBox.Size = new Size(725, 48);
             delayTextBox.TabIndex = 0;
             delayTextBox.TabStop = false;
             delayTextBox.TextAlign = HorizontalAlignment.Left;
@@ -262,14 +323,14 @@
             materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard2.Name = "materialCard2";
             materialCard2.Padding = new Padding(14);
-            materialCard2.Size = new Size(777, 39);
+            materialCard2.Size = new Size(888, 39);
             materialCard2.TabIndex = 2;
             // 
             // RMB_RadioButton
             // 
             RMB_RadioButton.AutoSize = true;
             RMB_RadioButton.Depth = 0;
-            RMB_RadioButton.Location = new Point(684, 1);
+            RMB_RadioButton.Location = new Point(805, 2);
             RMB_RadioButton.Margin = new Padding(0);
             RMB_RadioButton.MouseLocation = new Point(-1, -1);
             RMB_RadioButton.MouseState = MaterialSkin.MouseState.HOVER;
@@ -302,12 +363,12 @@
             // 
             clickKindLabel.AutoSize = true;
             clickKindLabel.Depth = 0;
-            clickKindLabel.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            clickKindLabel.Font = new Font("思源黑体 CN Regular", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             clickKindLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
             clickKindLabel.Location = new Point(17, 14);
             clickKindLabel.MouseState = MaterialSkin.MouseState.HOVER;
             clickKindLabel.Name = "clickKindLabel";
-            clickKindLabel.Size = new Size(63, 17);
+            clickKindLabel.Size = new Size(65, 19);
             clickKindLabel.TabIndex = 1;
             clickKindLabel.Text = "Click type";
             // 
@@ -325,7 +386,7 @@
             macroPage.Location = new Point(4, 33);
             macroPage.Name = "macroPage";
             macroPage.Padding = new Padding(3);
-            macroPage.Size = new Size(811, 616);
+            macroPage.Size = new Size(937, 616);
             macroPage.TabIndex = 1;
             macroPage.Text = "Macro";
             // 
@@ -341,7 +402,7 @@
             materialCard7.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard7.Name = "materialCard7";
             materialCard7.Padding = new Padding(14);
-            materialCard7.Size = new Size(795, 123);
+            materialCard7.Size = new Size(917, 123);
             materialCard7.TabIndex = 9;
             // 
             // macroHotkeyComboBox
@@ -360,11 +421,11 @@
             macroHotkeyComboBox.IntegralHeight = false;
             macroHotkeyComboBox.ItemHeight = 43;
             macroHotkeyComboBox.Items.AddRange(new object[] { "F8", "Mouse side button 1", "Mouse side button 2" });
-            macroHotkeyComboBox.Location = new Point(14, 17);
+            macroHotkeyComboBox.Location = new Point(19, 17);
             macroHotkeyComboBox.MaxDropDownItems = 4;
             macroHotkeyComboBox.MouseState = MaterialSkin.MouseState.OUT;
             macroHotkeyComboBox.Name = "macroHotkeyComboBox";
-            macroHotkeyComboBox.Size = new Size(764, 49);
+            macroHotkeyComboBox.Size = new Size(881, 49);
             macroHotkeyComboBox.StartIndex = 0;
             macroHotkeyComboBox.TabIndex = 7;
             // 
@@ -373,16 +434,15 @@
             macroChangeHotKeyButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             macroChangeHotKeyButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             macroChangeHotKeyButton.Depth = 0;
-            macroChangeHotKeyButton.Dock = DockStyle.Bottom;
             macroChangeHotKeyButton.FlatStyle = FlatStyle.Flat;
             macroChangeHotKeyButton.HighEmphasis = true;
             macroChangeHotKeyButton.Icon = null;
-            macroChangeHotKeyButton.Location = new Point(14, 73);
+            macroChangeHotKeyButton.Location = new Point(750, 75);
             macroChangeHotKeyButton.Margin = new Padding(4, 6, 4, 6);
             macroChangeHotKeyButton.MouseState = MaterialSkin.MouseState.HOVER;
             macroChangeHotKeyButton.Name = "macroChangeHotKeyButton";
             macroChangeHotKeyButton.NoAccentTextColor = Color.Empty;
-            macroChangeHotKeyButton.Size = new Size(767, 36);
+            macroChangeHotKeyButton.Size = new Size(152, 36);
             macroChangeHotKeyButton.TabIndex = 8;
             macroChangeHotKeyButton.Text = "Select a hot key";
             macroChangeHotKeyButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -400,7 +460,7 @@
             materialCard6.Controls.Add(macroActionTypeComboBox);
             materialCard6.Depth = 0;
             materialCard6.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard6.Location = new Point(484, 155);
+            materialCard6.Location = new Point(606, 155);
             materialCard6.Margin = new Padding(14);
             materialCard6.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard6.Name = "materialCard6";
@@ -439,7 +499,7 @@
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
             materialButton1.NoAccentTextColor = Color.Empty;
-            materialButton1.Size = new Size(80, 36);
+            materialButton1.Size = new Size(81, 36);
             materialButton1.TabIndex = 4;
             materialButton1.Text = "Remove";
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -472,6 +532,8 @@
             // macroDurationTextBox
             // 
             macroDurationTextBox.AnimateReadOnly = false;
+            macroDurationTextBox.AutoCompleteMode = AutoCompleteMode.None;
+            macroDurationTextBox.AutoCompleteSource = AutoCompleteSource.None;
             macroDurationTextBox.BackgroundImageLayout = ImageLayout.None;
             macroDurationTextBox.CharacterCasing = CharacterCasing.Normal;
             macroDurationTextBox.Depth = 0;
@@ -501,6 +563,8 @@
             // macroDelayTextBox
             // 
             macroDelayTextBox.AnimateReadOnly = false;
+            macroDelayTextBox.AutoCompleteMode = AutoCompleteMode.None;
+            macroDelayTextBox.AutoCompleteSource = AutoCompleteSource.None;
             macroDelayTextBox.BackgroundImageLayout = ImageLayout.None;
             macroDelayTextBox.CharacterCasing = CharacterCasing.Normal;
             macroDelayTextBox.Depth = 0;
@@ -556,11 +620,11 @@
             // 
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
-            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(484, 132);
+            materialLabel1.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel1.Location = new Point(606, 132);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(77, 19);
+            materialLabel1.Size = new Size(83, 23);
             materialLabel1.TabIndex = 5;
             materialLabel1.Text = "Add action";
             // 
@@ -568,11 +632,11 @@
             // 
             actionTipLabel.AutoSize = true;
             actionTipLabel.Depth = 0;
-            actionTipLabel.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            actionTipLabel.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             actionTipLabel.Location = new Point(6, 132);
             actionTipLabel.MouseState = MaterialSkin.MouseState.HOVER;
             actionTipLabel.Name = "actionTipLabel";
-            actionTipLabel.Size = new Size(71, 19);
+            actionTipLabel.Size = new Size(78, 23);
             actionTipLabel.TabIndex = 4;
             actionTipLabel.Text = "Action list";
             // 
@@ -587,7 +651,7 @@
             materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard5.Name = "materialCard5";
             materialCard5.Padding = new Padding(14);
-            materialCard5.Size = new Size(464, 321);
+            materialCard5.Size = new Size(591, 321);
             materialCard5.TabIndex = 3;
             // 
             // macroActionListBox
@@ -601,7 +665,7 @@
             macroActionListBox.Name = "macroActionListBox";
             macroActionListBox.SelectedIndex = -1;
             macroActionListBox.SelectedItem = null;
-            macroActionListBox.Size = new Size(433, 287);
+            macroActionListBox.Size = new Size(560, 287);
             macroActionListBox.TabIndex = 0;
             // 
             // materialCard4
@@ -612,12 +676,12 @@
             materialCard4.Controls.Add(macroFileNameLabel);
             materialCard4.Depth = 0;
             materialCard4.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard4.Location = new Point(6, 65);
+            materialCard4.Location = new Point(6, 74);
             materialCard4.Margin = new Padding(14);
             materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard4.Name = "materialCard4";
             materialCard4.Padding = new Padding(14);
-            materialCard4.Size = new Size(795, 53);
+            materialCard4.Size = new Size(917, 53);
             materialCard4.TabIndex = 2;
             // 
             // newSSFButton
@@ -627,7 +691,7 @@
             newSSFButton.Depth = 0;
             newSSFButton.HighEmphasis = true;
             newSSFButton.Icon = null;
-            newSSFButton.Location = new Point(713, 7);
+            newSSFButton.Location = new Point(838, 7);
             newSSFButton.Margin = new Padding(4, 6, 4, 6);
             newSSFButton.MouseState = MaterialSkin.MouseState.HOVER;
             newSSFButton.Name = "newSSFButton";
@@ -647,7 +711,7 @@
             openSSFButton.Depth = 0;
             openSSFButton.HighEmphasis = true;
             openSSFButton.Icon = null;
-            openSSFButton.Location = new Point(641, 7);
+            openSSFButton.Location = new Point(766, 7);
             openSSFButton.Margin = new Padding(4, 6, 4, 6);
             openSSFButton.MouseState = MaterialSkin.MouseState.HOVER;
             openSSFButton.Name = "openSSFButton";
@@ -664,11 +728,11 @@
             // 
             macroFileNameLabel.AutoSize = true;
             macroFileNameLabel.Depth = 0;
-            macroFileNameLabel.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            macroFileNameLabel.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             macroFileNameLabel.Location = new Point(17, 14);
             macroFileNameLabel.MouseState = MaterialSkin.MouseState.HOVER;
             macroFileNameLabel.Name = "macroFileNameLabel";
-            macroFileNameLabel.Size = new Size(49, 19);
+            macroFileNameLabel.Size = new Size(54, 23);
             macroFileNameLabel.TabIndex = 0;
             macroFileNameLabel.Text = "(None)";
             // 
@@ -676,11 +740,11 @@
             // 
             ssfTipLabel2.AutoSize = true;
             ssfTipLabel2.Depth = 0;
-            ssfTipLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            ssfTipLabel2.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             ssfTipLabel2.Location = new Point(6, 42);
             ssfTipLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             ssfTipLabel2.Name = "ssfTipLabel2";
-            ssfTipLabel2.Size = new Size(126, 19);
+            ssfTipLabel2.Size = new Size(138, 23);
             ssfTipLabel2.TabIndex = 1;
             ssfTipLabel2.Text = "Select a script file";
             // 
@@ -688,27 +752,165 @@
             // 
             macroTitleLabel.AutoSize = true;
             macroTitleLabel.Depth = 0;
-            macroTitleLabel.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
+            macroTitleLabel.Font = new Font("思源黑体 CN Regular", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             macroTitleLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
             macroTitleLabel.Location = new Point(6, 13);
             macroTitleLabel.MouseState = MaterialSkin.MouseState.HOVER;
             macroTitleLabel.Name = "macroTitleLabel";
-            macroTitleLabel.Size = new Size(70, 29);
+            macroTitleLabel.Size = new Size(70, 33);
             macroTitleLabel.TabIndex = 0;
             macroTitleLabel.Text = "Macro";
             // 
             // settingsPage
             // 
             settingsPage.BackColor = Color.White;
+            settingsPage.Controls.Add(materialLabel8);
+            settingsPage.Controls.Add(materialLabel2);
+            settingsPage.Controls.Add(materialCard8);
             settingsPage.Controls.Add(langComboBox);
             settingsPage.Controls.Add(tipsLabel1);
             settingsPage.Controls.Add(settingsTitleLabel);
             settingsPage.Location = new Point(4, 33);
             settingsPage.Name = "settingsPage";
             settingsPage.Padding = new Padding(3);
-            settingsPage.Size = new Size(811, 616);
+            settingsPage.Size = new Size(937, 616);
             settingsPage.TabIndex = 2;
             settingsPage.Text = "Settings";
+            // 
+            // materialLabel8
+            // 
+            materialLabel8.AutoSize = true;
+            materialLabel8.Depth = 0;
+            materialLabel8.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel8.Location = new Point(293, 594);
+            materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel8.Name = "materialLabel8";
+            materialLabel8.Size = new Size(321, 23);
+            materialLabel8.TabIndex = 5;
+            materialLabel8.Text = "©2022-2024 luomoSoft.All right reserved.";
+            // 
+            // materialLabel2
+            // 
+            materialLabel2.AutoSize = true;
+            materialLabel2.Depth = 0;
+            materialLabel2.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel2.Location = new Point(6, 141);
+            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel2.Name = "materialLabel2";
+            materialLabel2.Size = new Size(85, 23);
+            materialLabel2.TabIndex = 4;
+            materialLabel2.Text = "关于/About";
+            // 
+            // materialCard8
+            // 
+            materialCard8.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard8.Controls.Add(materialButton2);
+            materialCard8.Controls.Add(materialLabel9);
+            materialCard8.Controls.Add(materialLabel7);
+            materialCard8.Controls.Add(materialLabel6);
+            materialCard8.Controls.Add(materialLabel5);
+            materialCard8.Controls.Add(materialLabel4);
+            materialCard8.Controls.Add(materialLabel3);
+            materialCard8.Depth = 0;
+            materialCard8.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialCard8.Location = new Point(6, 174);
+            materialCard8.Margin = new Padding(14);
+            materialCard8.MouseState = MaterialSkin.MouseState.HOVER;
+            materialCard8.Name = "materialCard8";
+            materialCard8.Padding = new Padding(14);
+            materialCard8.Size = new Size(925, 136);
+            materialCard8.TabIndex = 3;
+            // 
+            // materialButton2
+            // 
+            materialButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton2.Depth = 0;
+            materialButton2.HighEmphasis = true;
+            materialButton2.Icon = null;
+            materialButton2.Location = new Point(828, 91);
+            materialButton2.Margin = new Padding(4, 6, 4, 6);
+            materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton2.Name = "materialButton2";
+            materialButton2.NoAccentTextColor = Color.Empty;
+            materialButton2.Size = new Size(77, 36);
+            materialButton2.TabIndex = 6;
+            materialButton2.Text = "前往/Go";
+            materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton2.UseAccentColor = false;
+            materialButton2.UseVisualStyleBackColor = true;
+            materialButton2.Click += materialButton2_Click;
+            // 
+            // materialLabel9
+            // 
+            materialLabel9.AutoSize = true;
+            materialLabel9.Depth = 0;
+            materialLabel9.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel9.Location = new Point(17, 103);
+            materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel9.Name = "materialLabel9";
+            materialLabel9.Size = new Size(53, 23);
+            materialLabel9.TabIndex = 5;
+            materialLabel9.Text = "Github";
+            // 
+            // materialLabel7
+            // 
+            materialLabel7.AutoSize = true;
+            materialLabel7.Depth = 0;
+            materialLabel7.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel7.Location = new Point(65, 71);
+            materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel7.Name = "materialLabel7";
+            materialLabel7.Size = new Size(265, 23);
+            materialLabel7.TabIndex = 4;
+            materialLabel7.Text = "E-mail:luomotongxue@gmail.com";
+            // 
+            // materialLabel6
+            // 
+            materialLabel6.AutoSize = true;
+            materialLabel6.Depth = 0;
+            materialLabel6.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel6.Location = new Point(66, 52);
+            materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel6.Name = "materialLabel6";
+            materialLabel6.Size = new Size(120, 23);
+            materialLabel6.TabIndex = 3;
+            materialLabel6.Text = "QQ:1453325399";
+            // 
+            // materialLabel5
+            // 
+            materialLabel5.AutoSize = true;
+            materialLabel5.Depth = 0;
+            materialLabel5.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel5.Location = new Point(17, 33);
+            materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel5.Name = "materialLabel5";
+            materialLabel5.Size = new Size(167, 23);
+            materialLabel5.TabIndex = 2;
+            materialLabel5.Text = "联系我们/Content us:\r\n";
+            // 
+            // materialLabel4
+            // 
+            materialLabel4.AutoSize = true;
+            materialLabel4.Depth = 0;
+            materialLabel4.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel4.Location = new Point(17, 33);
+            materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel4.Name = "materialLabel4";
+            materialLabel4.Size = new Size(1, 0);
+            materialLabel4.TabIndex = 1;
+            // 
+            // materialLabel3
+            // 
+            materialLabel3.AutoSize = true;
+            materialLabel3.Depth = 0;
+            materialLabel3.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel3.Location = new Point(17, 14);
+            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel3.Name = "materialLabel3";
+            materialLabel3.Size = new Size(161, 23);
+            materialLabel3.TabIndex = 0;
+            materialLabel3.Text = "作者/Author:落墨同学";
             // 
             // langComboBox
             // 
@@ -729,7 +931,7 @@
             langComboBox.MaxDropDownItems = 4;
             langComboBox.MouseState = MaterialSkin.MouseState.OUT;
             langComboBox.Name = "langComboBox";
-            langComboBox.Size = new Size(711, 49);
+            langComboBox.Size = new Size(925, 49);
             langComboBox.StartIndex = 0;
             langComboBox.TabIndex = 2;
             langComboBox.SelectedIndexChanged += langComboBox_SelectedIndexChanged;
@@ -738,11 +940,11 @@
             // 
             tipsLabel1.AutoSize = true;
             tipsLabel1.Depth = 0;
-            tipsLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            tipsLabel1.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             tipsLabel1.Location = new Point(6, 56);
             tipsLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             tipsLabel1.Name = "tipsLabel1";
-            tipsLabel1.Size = new Size(111, 19);
+            tipsLabel1.Size = new Size(113, 23);
             tipsLabel1.TabIndex = 1;
             tipsLabel1.Text = "语言/Language";
             // 
@@ -750,12 +952,12 @@
             // 
             settingsTitleLabel.AutoSize = true;
             settingsTitleLabel.Depth = 0;
-            settingsTitleLabel.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
+            settingsTitleLabel.Font = new Font("思源黑体 CN Regular", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             settingsTitleLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
             settingsTitleLabel.Location = new Point(6, 12);
             settingsTitleLabel.MouseState = MaterialSkin.MouseState.HOVER;
             settingsTitleLabel.Name = "settingsTitleLabel";
-            settingsTitleLabel.Size = new Size(88, 29);
+            settingsTitleLabel.Size = new Size(93, 33);
             settingsTitleLabel.TabIndex = 0;
             settingsTitleLabel.Text = "Settings";
             // 
@@ -763,10 +965,11 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(825, 720);
+            ClientSize = new Size(951, 720);
             Controls.Add(TabControl);
             DrawerTabControl = TabControl;
             MaximizeBox = false;
+            MinimumSize = new Size(951, 720);
             Name = "Form1";
             Text = "AutoClicker";
             TabControl.ResumeLayout(false);
@@ -789,6 +992,8 @@
             materialCard4.PerformLayout();
             settingsPage.ResumeLayout(false);
             settingsPage.PerformLayout();
+            materialCard8.ResumeLayout(false);
+            materialCard8.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -832,5 +1037,17 @@
         private MaterialSkin.Controls.MaterialComboBox macroHotkeyComboBox;
         private MaterialSkin.Controls.MaterialButton macroChangeHotKeyButton;
         private MaterialSkin.Controls.MaterialCard materialCard7;
+        private MaterialSkin.Controls.MaterialButton chooseClickTypeHotkeyButton;
+        private MaterialSkin.Controls.MaterialComboBox changeClickTypeHotkeyComboBox;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialCard materialCard8;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel9;
     }
 }

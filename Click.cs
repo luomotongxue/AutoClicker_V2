@@ -122,6 +122,7 @@ namespace AutoClicker_V2
                     timer.Interval = 1000 / remainderCPS;
                     timer.Start();
                 }
+
                 // 执行分块timer
                 superTimer.Interval = 1000 / ((value - remainderCPS) / part);
                 superTimer.Start();
@@ -140,6 +141,7 @@ namespace AutoClicker_V2
 
         public static void StopClick()
         {
+            isClicking = false;
             if (isSuperClick)
             {
                 isSuperClick = false;
@@ -153,8 +155,7 @@ namespace AutoClicker_V2
                 return;
             }
 
-            timer.Stop();
-            isClicking = false;          
+            timer.Stop();         
         }
     }
 }
