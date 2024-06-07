@@ -41,6 +41,7 @@
             unitComboBox = new MaterialSkin.Controls.MaterialComboBox();
             delayTextBox = new MaterialSkin.Controls.MaterialTextBox2();
             materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            doubleRadioButton = new MaterialSkin.Controls.MaterialRadioButton();
             RMB_RadioButton = new MaterialSkin.Controls.MaterialRadioButton();
             LMB_RadioButton = new MaterialSkin.Controls.MaterialRadioButton();
             clickKindLabel = new MaterialSkin.Controls.MaterialLabel();
@@ -124,12 +125,12 @@
             // 
             autoclickTitleLabel.AutoSize = true;
             autoclickTitleLabel.Depth = 0;
-            autoclickTitleLabel.Font = new Font("思源黑体 CN Regular", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
+            autoclickTitleLabel.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             autoclickTitleLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
             autoclickTitleLabel.Location = new Point(10, 14);
             autoclickTitleLabel.MouseState = MaterialSkin.MouseState.HOVER;
             autoclickTitleLabel.Name = "autoclickTitleLabel";
-            autoclickTitleLabel.Size = new Size(109, 33);
+            autoclickTitleLabel.Size = new Size(105, 29);
             autoclickTitleLabel.TabIndex = 1;
             autoclickTitleLabel.Text = "AutoClick";
             // 
@@ -175,12 +176,12 @@
             chooseClickTypeHotkeyButton.Depth = 0;
             chooseClickTypeHotkeyButton.HighEmphasis = true;
             chooseClickTypeHotkeyButton.Icon = null;
-            chooseClickTypeHotkeyButton.Location = new Point(729, 358);
+            chooseClickTypeHotkeyButton.Location = new Point(714, 371);
             chooseClickTypeHotkeyButton.Margin = new Padding(4, 6, 4, 6);
             chooseClickTypeHotkeyButton.MouseState = MaterialSkin.MouseState.HOVER;
             chooseClickTypeHotkeyButton.Name = "chooseClickTypeHotkeyButton";
             chooseClickTypeHotkeyButton.NoAccentTextColor = Color.Empty;
-            chooseClickTypeHotkeyButton.Size = new Size(159, 36);
+            chooseClickTypeHotkeyButton.Size = new Size(156, 36);
             chooseClickTypeHotkeyButton.TabIndex = 5;
             chooseClickTypeHotkeyButton.Text = "Choose a hot key";
             chooseClickTypeHotkeyButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -208,7 +209,7 @@
             changeClickTypeHotkeyComboBox.MaxDropDownItems = 4;
             changeClickTypeHotkeyComboBox.MouseState = MaterialSkin.MouseState.OUT;
             changeClickTypeHotkeyComboBox.Name = "changeClickTypeHotkeyComboBox";
-            changeClickTypeHotkeyComboBox.Size = new Size(703, 49);
+            changeClickTypeHotkeyComboBox.Size = new Size(680, 49);
             changeClickTypeHotkeyComboBox.StartIndex = 0;
             changeClickTypeHotkeyComboBox.TabIndex = 4;
             changeClickTypeHotkeyComboBox.SelectedIndexChanged += changeClickTypeHotkeyComboBox_SelectedIndexChanged;
@@ -220,12 +221,12 @@
             chooseHotkeyButton.Depth = 0;
             chooseHotkeyButton.HighEmphasis = true;
             chooseHotkeyButton.Icon = null;
-            chooseHotkeyButton.Location = new Point(729, 308);
+            chooseHotkeyButton.Location = new Point(714, 295);
             chooseHotkeyButton.Margin = new Padding(4, 6, 4, 6);
             chooseHotkeyButton.MouseState = MaterialSkin.MouseState.HOVER;
             chooseHotkeyButton.Name = "chooseHotkeyButton";
             chooseHotkeyButton.NoAccentTextColor = Color.Empty;
-            chooseHotkeyButton.Size = new Size(159, 36);
+            chooseHotkeyButton.Size = new Size(156, 36);
             chooseHotkeyButton.TabIndex = 3;
             chooseHotkeyButton.Text = "Choose a hot key";
             chooseHotkeyButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -253,7 +254,7 @@
             hotkeyComboBox.MaxDropDownItems = 4;
             hotkeyComboBox.MouseState = MaterialSkin.MouseState.OUT;
             hotkeyComboBox.Name = "hotkeyComboBox";
-            hotkeyComboBox.Size = new Size(703, 49);
+            hotkeyComboBox.Size = new Size(680, 49);
             hotkeyComboBox.StartIndex = 0;
             hotkeyComboBox.TabIndex = 2;
             hotkeyComboBox.SelectedIndexChanged += hotkeyComboBox_SelectedIndexChanged;
@@ -272,20 +273,18 @@
             unitComboBox.FormattingEnabled = true;
             unitComboBox.IntegralHeight = false;
             unitComboBox.ItemHeight = 43;
-            unitComboBox.Items.AddRange(new object[] { "CPS", "Delay(ms)" });
-            unitComboBox.Location = new Point(748, 16);
+            unitComboBox.Items.AddRange(new object[] { "CPS", "延迟/Delay(ms)" });
+            unitComboBox.Location = new Point(705, 16);
             unitComboBox.MaxDropDownItems = 4;
             unitComboBox.MouseState = MaterialSkin.MouseState.OUT;
             unitComboBox.Name = "unitComboBox";
-            unitComboBox.Size = new Size(123, 49);
+            unitComboBox.Size = new Size(166, 49);
             unitComboBox.StartIndex = 0;
             unitComboBox.TabIndex = 1;
             // 
             // delayTextBox
             // 
             delayTextBox.AnimateReadOnly = false;
-            delayTextBox.AutoCompleteMode = AutoCompleteMode.None;
-            delayTextBox.AutoCompleteSource = AutoCompleteSource.None;
             delayTextBox.BackgroundImageLayout = ImageLayout.None;
             delayTextBox.CharacterCasing = CharacterCasing.Normal;
             delayTextBox.Depth = 0;
@@ -305,7 +304,7 @@
             delayTextBox.SelectionLength = 0;
             delayTextBox.SelectionStart = 0;
             delayTextBox.ShortcutsEnabled = true;
-            delayTextBox.Size = new Size(725, 48);
+            delayTextBox.Size = new Size(682, 48);
             delayTextBox.TabIndex = 0;
             delayTextBox.TabStop = false;
             delayTextBox.TextAlign = HorizontalAlignment.Left;
@@ -315,6 +314,7 @@
             // materialCard2
             // 
             materialCard2.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard2.Controls.Add(doubleRadioButton);
             materialCard2.Controls.Add(RMB_RadioButton);
             materialCard2.Controls.Add(LMB_RadioButton);
             materialCard2.Depth = 0;
@@ -327,20 +327,36 @@
             materialCard2.Size = new Size(888, 39);
             materialCard2.TabIndex = 2;
             // 
+            // doubleRadioButton
+            // 
+            doubleRadioButton.AutoSize = true;
+            doubleRadioButton.Depth = 0;
+            doubleRadioButton.Location = new Point(747, 0);
+            doubleRadioButton.Margin = new Padding(0);
+            doubleRadioButton.MouseLocation = new Point(-1, -1);
+            doubleRadioButton.MouseState = MaterialSkin.MouseState.HOVER;
+            doubleRadioButton.Name = "doubleRadioButton";
+            doubleRadioButton.Ripple = true;
+            doubleRadioButton.Size = new Size(124, 37);
+            doubleRadioButton.TabIndex = 2;
+            doubleRadioButton.TabStop = true;
+            doubleRadioButton.Text = "双键/Double";
+            doubleRadioButton.UseVisualStyleBackColor = true;
+            // 
             // RMB_RadioButton
             // 
             RMB_RadioButton.AutoSize = true;
             RMB_RadioButton.Depth = 0;
-            RMB_RadioButton.Location = new Point(805, 2);
+            RMB_RadioButton.Location = new Point(370, 2);
             RMB_RadioButton.Margin = new Padding(0);
             RMB_RadioButton.MouseLocation = new Point(-1, -1);
             RMB_RadioButton.MouseState = MaterialSkin.MouseState.HOVER;
             RMB_RadioButton.Name = "RMB_RadioButton";
             RMB_RadioButton.Ripple = true;
-            RMB_RadioButton.Size = new Size(69, 37);
+            RMB_RadioButton.Size = new Size(108, 37);
             RMB_RadioButton.TabIndex = 1;
             RMB_RadioButton.TabStop = true;
-            RMB_RadioButton.Text = "RMB";
+            RMB_RadioButton.Text = "右键/RMB";
             RMB_RadioButton.UseVisualStyleBackColor = true;
             // 
             // LMB_RadioButton
@@ -354,22 +370,22 @@
             LMB_RadioButton.MouseState = MaterialSkin.MouseState.HOVER;
             LMB_RadioButton.Name = "LMB_RadioButton";
             LMB_RadioButton.Ripple = true;
-            LMB_RadioButton.Size = new Size(68, 37);
+            LMB_RadioButton.Size = new Size(107, 37);
             LMB_RadioButton.TabIndex = 0;
             LMB_RadioButton.TabStop = true;
-            LMB_RadioButton.Text = "LMB";
+            LMB_RadioButton.Text = "左键/LMB";
             LMB_RadioButton.UseVisualStyleBackColor = true;
             // 
             // clickKindLabel
             // 
             clickKindLabel.AutoSize = true;
             clickKindLabel.Depth = 0;
-            clickKindLabel.Font = new Font("思源黑体 CN Regular", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            clickKindLabel.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             clickKindLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
             clickKindLabel.Location = new Point(17, 14);
             clickKindLabel.MouseState = MaterialSkin.MouseState.HOVER;
             clickKindLabel.Name = "clickKindLabel";
-            clickKindLabel.Size = new Size(65, 19);
+            clickKindLabel.Size = new Size(63, 17);
             clickKindLabel.TabIndex = 1;
             clickKindLabel.Text = "Click type";
             // 
@@ -443,7 +459,7 @@
             macroChangeHotKeyButton.MouseState = MaterialSkin.MouseState.HOVER;
             macroChangeHotKeyButton.Name = "macroChangeHotKeyButton";
             macroChangeHotKeyButton.NoAccentTextColor = Color.Empty;
-            macroChangeHotKeyButton.Size = new Size(152, 36);
+            macroChangeHotKeyButton.Size = new Size(150, 36);
             macroChangeHotKeyButton.TabIndex = 8;
             macroChangeHotKeyButton.Text = "Select a hot key";
             macroChangeHotKeyButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -500,7 +516,7 @@
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
             materialButton1.NoAccentTextColor = Color.Empty;
-            materialButton1.Size = new Size(81, 36);
+            materialButton1.Size = new Size(80, 36);
             materialButton1.TabIndex = 4;
             materialButton1.Text = "Remove";
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -533,8 +549,6 @@
             // macroDurationTextBox
             // 
             macroDurationTextBox.AnimateReadOnly = false;
-            macroDurationTextBox.AutoCompleteMode = AutoCompleteMode.None;
-            macroDurationTextBox.AutoCompleteSource = AutoCompleteSource.None;
             macroDurationTextBox.BackgroundImageLayout = ImageLayout.None;
             macroDurationTextBox.CharacterCasing = CharacterCasing.Normal;
             macroDurationTextBox.Depth = 0;
@@ -564,8 +578,6 @@
             // macroDelayTextBox
             // 
             macroDelayTextBox.AnimateReadOnly = false;
-            macroDelayTextBox.AutoCompleteMode = AutoCompleteMode.None;
-            macroDelayTextBox.AutoCompleteSource = AutoCompleteSource.None;
             macroDelayTextBox.BackgroundImageLayout = ImageLayout.None;
             macroDelayTextBox.CharacterCasing = CharacterCasing.Normal;
             macroDelayTextBox.Depth = 0;
@@ -621,11 +633,11 @@
             // 
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
-            materialLabel1.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel1.Location = new Point(606, 132);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(83, 23);
+            materialLabel1.Size = new Size(77, 19);
             materialLabel1.TabIndex = 5;
             materialLabel1.Text = "Add action";
             // 
@@ -633,11 +645,11 @@
             // 
             actionTipLabel.AutoSize = true;
             actionTipLabel.Depth = 0;
-            actionTipLabel.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            actionTipLabel.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             actionTipLabel.Location = new Point(6, 132);
             actionTipLabel.MouseState = MaterialSkin.MouseState.HOVER;
             actionTipLabel.Name = "actionTipLabel";
-            actionTipLabel.Size = new Size(78, 23);
+            actionTipLabel.Size = new Size(71, 19);
             actionTipLabel.TabIndex = 4;
             actionTipLabel.Text = "Action list";
             // 
@@ -729,11 +741,11 @@
             // 
             macroFileNameLabel.AutoSize = true;
             macroFileNameLabel.Depth = 0;
-            macroFileNameLabel.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            macroFileNameLabel.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             macroFileNameLabel.Location = new Point(17, 14);
             macroFileNameLabel.MouseState = MaterialSkin.MouseState.HOVER;
             macroFileNameLabel.Name = "macroFileNameLabel";
-            macroFileNameLabel.Size = new Size(54, 23);
+            macroFileNameLabel.Size = new Size(49, 19);
             macroFileNameLabel.TabIndex = 0;
             macroFileNameLabel.Text = "(None)";
             // 
@@ -741,11 +753,11 @@
             // 
             ssfTipLabel2.AutoSize = true;
             ssfTipLabel2.Depth = 0;
-            ssfTipLabel2.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            ssfTipLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             ssfTipLabel2.Location = new Point(6, 42);
             ssfTipLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             ssfTipLabel2.Name = "ssfTipLabel2";
-            ssfTipLabel2.Size = new Size(138, 23);
+            ssfTipLabel2.Size = new Size(126, 19);
             ssfTipLabel2.TabIndex = 1;
             ssfTipLabel2.Text = "Select a script file";
             // 
@@ -753,12 +765,12 @@
             // 
             macroTitleLabel.AutoSize = true;
             macroTitleLabel.Depth = 0;
-            macroTitleLabel.Font = new Font("思源黑体 CN Regular", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
+            macroTitleLabel.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             macroTitleLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
             macroTitleLabel.Location = new Point(6, 13);
             macroTitleLabel.MouseState = MaterialSkin.MouseState.HOVER;
             macroTitleLabel.Name = "macroTitleLabel";
-            macroTitleLabel.Size = new Size(70, 33);
+            macroTitleLabel.Size = new Size(70, 29);
             macroTitleLabel.TabIndex = 0;
             macroTitleLabel.Text = "Macro";
             // 
@@ -782,11 +794,11 @@
             // 
             materialLabel8.AutoSize = true;
             materialLabel8.Depth = 0;
-            materialLabel8.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel8.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel8.Location = new Point(293, 594);
             materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel8.Name = "materialLabel8";
-            materialLabel8.Size = new Size(321, 23);
+            materialLabel8.Size = new Size(294, 19);
             materialLabel8.TabIndex = 5;
             materialLabel8.Text = "©2022-2024 luomoSoft.All right reserved.";
             // 
@@ -794,11 +806,11 @@
             // 
             materialLabel2.AutoSize = true;
             materialLabel2.Depth = 0;
-            materialLabel2.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel2.Location = new Point(6, 141);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
-            materialLabel2.Size = new Size(85, 23);
+            materialLabel2.Size = new Size(82, 19);
             materialLabel2.TabIndex = 4;
             materialLabel2.Text = "关于/About";
             // 
@@ -834,7 +846,7 @@
             materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton2.Name = "materialButton2";
             materialButton2.NoAccentTextColor = Color.Empty;
-            materialButton2.Size = new Size(77, 36);
+            materialButton2.Size = new Size(79, 36);
             materialButton2.TabIndex = 6;
             materialButton2.Text = "前往/Go";
             materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -846,11 +858,11 @@
             // 
             materialLabel9.AutoSize = true;
             materialLabel9.Depth = 0;
-            materialLabel9.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel9.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel9.Location = new Point(17, 103);
             materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel9.Name = "materialLabel9";
-            materialLabel9.Size = new Size(53, 23);
+            materialLabel9.Size = new Size(48, 19);
             materialLabel9.TabIndex = 5;
             materialLabel9.Text = "Github";
             // 
@@ -858,11 +870,11 @@
             // 
             materialLabel7.AutoSize = true;
             materialLabel7.Depth = 0;
-            materialLabel7.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel7.Location = new Point(65, 71);
             materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel7.Name = "materialLabel7";
-            materialLabel7.Size = new Size(265, 23);
+            materialLabel7.Size = new Size(240, 19);
             materialLabel7.TabIndex = 4;
             materialLabel7.Text = "E-mail:luomotongxue@gmail.com";
             // 
@@ -870,11 +882,11 @@
             // 
             materialLabel6.AutoSize = true;
             materialLabel6.Depth = 0;
-            materialLabel6.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel6.Location = new Point(66, 52);
             materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel6.Name = "materialLabel6";
-            materialLabel6.Size = new Size(120, 23);
+            materialLabel6.Size = new Size(117, 19);
             materialLabel6.TabIndex = 3;
             materialLabel6.Text = "QQ:1453325399";
             // 
@@ -882,11 +894,11 @@
             // 
             materialLabel5.AutoSize = true;
             materialLabel5.Depth = 0;
-            materialLabel5.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel5.Location = new Point(17, 33);
             materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel5.Name = "materialLabel5";
-            materialLabel5.Size = new Size(167, 23);
+            materialLabel5.Size = new Size(156, 19);
             materialLabel5.TabIndex = 2;
             materialLabel5.Text = "联系我们/Content us:\r\n";
             // 
@@ -894,7 +906,7 @@
             // 
             materialLabel4.AutoSize = true;
             materialLabel4.Depth = 0;
-            materialLabel4.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel4.Location = new Point(17, 33);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
@@ -905,11 +917,11 @@
             // 
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
-            materialLabel3.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel3.Location = new Point(17, 14);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
-            materialLabel3.Size = new Size(161, 23);
+            materialLabel3.Size = new Size(155, 19);
             materialLabel3.TabIndex = 0;
             materialLabel3.Text = "作者/Author:落墨同学";
             // 
@@ -941,11 +953,11 @@
             // 
             tipsLabel1.AutoSize = true;
             tipsLabel1.Depth = 0;
-            tipsLabel1.Font = new Font("思源黑体 CN Medium", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            tipsLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             tipsLabel1.Location = new Point(6, 56);
             tipsLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             tipsLabel1.Name = "tipsLabel1";
-            tipsLabel1.Size = new Size(113, 23);
+            tipsLabel1.Size = new Size(111, 19);
             tipsLabel1.TabIndex = 1;
             tipsLabel1.Text = "语言/Language";
             // 
@@ -953,12 +965,12 @@
             // 
             settingsTitleLabel.AutoSize = true;
             settingsTitleLabel.Depth = 0;
-            settingsTitleLabel.Font = new Font("思源黑体 CN Regular", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
+            settingsTitleLabel.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             settingsTitleLabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
             settingsTitleLabel.Location = new Point(6, 12);
             settingsTitleLabel.MouseState = MaterialSkin.MouseState.HOVER;
             settingsTitleLabel.Name = "settingsTitleLabel";
-            settingsTitleLabel.Size = new Size(93, 33);
+            settingsTitleLabel.Size = new Size(88, 29);
             settingsTitleLabel.TabIndex = 0;
             settingsTitleLabel.Text = "Settings";
             // 
@@ -1051,5 +1063,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
+        private MaterialSkin.Controls.MaterialRadioButton doubleRadioButton;
     }
 }

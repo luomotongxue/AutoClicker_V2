@@ -1,8 +1,6 @@
 using MaterialSkin.Controls;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using System.Timers;
 using static AutoClicker_V2.MouseHook;
 
 namespace AutoClicker_V2
@@ -16,7 +14,7 @@ namespace AutoClicker_V2
         // snackbar，用于展示消息。
         private MaterialSnackBar snackBar = new();
         // 是否使用热键。
-        private static bool isRMB = false;
+        private static string clickKindString = "";
         // 连点热键，默认为F8。
         private Keys clickHotkey = Keys.F8;
         // 切换点击类型热键，默认为F2。
@@ -185,18 +183,31 @@ namespace AutoClicker_V2
 
             if ((!int.TryParse(delayTextBox.Text, out value)) || value < 0 || value > 10000)
             {
-                snackBar.Text = "请输入有效的数字！";
+                snackBar.Text = "请输入有效的数字/Please input a vaild number";
                 snackBar.Show(this);
                 return;
             }
-            isRMB = RMB_RadioButton.Checked ? true : false;
-            useDelay = unitComboBox.SelectedIndex == 1 ? true : false;
-            this.Invoke(new Action(() =>
+
+            if (LMB_RadioButton.Checked) 
             {
-                AutoClicker_V2.Click.StartClick(isRMB, useDelay, value);
+                clickKindString = "LMB";
+            }
+            else if (RMB_RadioButton.Checked)
+            {
+                clickKindString = "RMB";
+            }
+            else if (doubleRadioButton.Checked)
+            {
+                clickKindString = "Double";
+            }
+
+            useDelay = unitComboBox.SelectedIndex == 1 ? true : false;
+
+            this.Invoke(new Action(() => {
+                AutoClicker_V2.Click.StartClick(clickKindString, useDelay, value);
             }));
 
-
+            // hide window
             Hide();
         }
 
@@ -331,23 +342,40 @@ namespace AutoClicker_V2
 
         private void ChangeClickType()
         {
-            if (AutoClicker_V2.Click.isClicking)
+            // LMB to RMB
+            if (LMB_RadioButton.Checked)
             {
-                // restart autoclick
-                AutoClicker_V2.Click.StopClick();
-                AutoClicker_V2.Click.StartClick(isRMB, useDelay, value);
+                LMB_RadioButton.Checked = false;
+                RMB_RadioButton.Checked = true;
+                clickKindString = "RMB";
+            }
+            // RMB to double
+            else if (RMB_RadioButton.Checked)
+            {
+                RMB_RadioButton.Checked = false;
+                doubleRadioButton.Checked = true;
+                clickKindString = "Double";
+            }
+            // double to LMB
+            else if (doubleRadioButton.Checked)
+            {
+                doubleRadioButton.Checked = false;
+                LMB_RadioButton.Checked = true;
+                clickKindString = "LMB";
             }
 
-            bool temp = LMB_RadioButton.Checked;
-            LMB_RadioButton.Checked = !LMB_RadioButton.Checked;
-            RMB_RadioButton.Checked = temp;
-
-            isRMB = !isRMB;
+            // hot change
+            if (AutoClicker_V2.Click.isClicking)
+            {
+                StopClick();
+                StartClick();
+            }
         }
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-            string command = "start https://github.com/luomotongxue/AutoClicker";
+            // 打开 Github 页面的命令
+            string command = "start https://github.com/luomotongxue/AutoClicker_V2";
 
             using (var process = new Process())
             {

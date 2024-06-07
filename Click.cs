@@ -14,6 +14,7 @@ namespace AutoClicker_V2
         public static Timer timer = new();
         private static Timer? superTimer = null;
         private static bool isRMB = false;
+        private static bool isDoubleClick = false;
         public static bool isClicking = false;
         private static bool isSuperClick = false;
         private static int mouseFlagsDown;
@@ -81,23 +82,33 @@ namespace AutoClicker_V2
             SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
         }
 
-        private static void ClickLoop()
-        {
-            SimulateClick(Cursor.Position.X, Cursor.Position.Y, mouseFlagsUp, mouseFlagsDown);
-        }
-
-        public static void StartClick(bool isRMB, bool useDelay, int value)
+        public static void StartClick(string clickKind, bool useDelay, int value)
         {
             if (isClicking)
             {
                 return;
             }
 
+            isRMB = false;
             isClicking = true;
+            isDoubleClick = false;
+
+            if (clickKind == "LMB")
+            {
+                isRMB = false;
+            }
+            else if (clickKind == "RMB")
+            {
+                isRMB = true;
+            }
+            else if (clickKind == "Double")
+            {
+                isRMB = false;
+                isDoubleClick = true;
+            }
+
             mouseFlagsUp = isRMB ? MOUSEEVENTF_RIGHTUP : MOUSEEVENTF_LEFTUP;
             mouseFlagsDown = isRMB ? MOUSEEVENTF_RIGHTDOWN : MOUSEEVENTF_LEFTDOWN;
-
-            Click.isRMB = isRMB;
 
             // 40cps以上则使用超级连点
             if (value >= 40 && !useDelay)
@@ -136,11 +147,38 @@ namespace AutoClicker_V2
 
         public static void Timer_Elapsed(object? sender, System.Timers.ElapsedEventArgs e)
         {
-            SimulateClick(Cursor.Position.X, Cursor.Position.Y, mouseFlagsUp, mouseFlagsDown);
+            if (isDoubleClick)
+            {
+                mouseFlagsUp = MOUSEEVENTF_LEFTUP;
+                mouseFlagsDown = MOUSEEVENTF_LEFTDOWN;
+                SimulateClick(Cursor.Position.X, Cursor.Position.Y, mouseFlagsUp, mouseFlagsDown);
+
+                mouseFlagsUp = MOUSEEVENTF_RIGHTUP;
+                mouseFlagsDown = MOUSEEVENTF_RIGHTDOWN;
+                SimulateClick(Cursor.Position.X, Cursor.Position.Y, mouseFlagsUp, mouseFlagsDown);
+            }
+            else if (!isRMB)
+            {
+                mouseFlagsUp = MOUSEEVENTF_LEFTUP;
+                mouseFlagsDown = MOUSEEVENTF_LEFTDOWN;
+                SimulateClick(Cursor.Position.X, Cursor.Position.Y, mouseFlagsUp, mouseFlagsDown);
+            }
+            else if (isRMB)
+            {
+                mouseFlagsUp = MOUSEEVENTF_RIGHTUP;
+                mouseFlagsDown = MOUSEEVENTF_RIGHTDOWN;
+                SimulateClick(Cursor.Position.X, Cursor.Position.Y, mouseFlagsUp, mouseFlagsDown);
+            }
         }
 
         public static void StopClick()
         {
+            // 都不在连点你停个集贸
+            if (!isClicking)
+            {
+                return;
+            }
+
             isClicking = false;
             if (isSuperClick)
             {
